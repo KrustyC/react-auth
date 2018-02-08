@@ -1,29 +1,38 @@
-const path = require('path')
-
+const path = require("path");
+const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  // the entry file for the bundle
-  entry: path.join(__dirname, '/client/src/app.jsx'),
-
-  // the bundle file we will get in the result
+  entry: ["./src/jsapp/app.js"],
   output: {
-    path: path.join(__dirname, '/client/dist/js'),
-    filename: 'app.js',
+    path: path.resolve(__dirname, "dist"),
+    filename: "js/[name].js"
   },
-
+  devServer: {
+    contentBase: "./dist"
+  },
   module: {
-
-    // apply loaders to files that meet given conditions
-    loaders: [{
-      test: /\.jsx?$/,
-      include: path.join(__dirname, '/client/src'),
-      loader: 'babel-loader',
-      query: {
-        presets: ["react", "es2015"]
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
+        }
+      },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: "html-loader"
+          }
+        ]
       }
-    }],
+    ]
   },
-
-  // start Webpack in a watch mode, so Webpack will rebuild the bundle on changes
-  watch: true
-}
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: "./src/index.html",
+      filename: "./index.html"
+    })
+  ]
+};
