@@ -2,7 +2,10 @@ const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: ["./src/jsapp/app.js"],
+  entry: [
+    'regenerator-runtime/runtime',
+    "./src/app.js"
+  ],
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "js/[name].js"
@@ -13,7 +16,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader"
@@ -21,13 +24,14 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        use: [
-          {
-            loader: "html-loader"
-          }
-        ]
+        use: {
+          loader: "html-loader"
+        }
       }
     ]
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
   },
   plugins: [
     new HtmlWebPackPlugin({
