@@ -1,6 +1,6 @@
 import Base from '../Base'
 
-export default class EventsAPI extends Base {
+export default class AuthAPI extends Base {
   signup(data, pushInfo) {
     return this.apiClient.post('auth/signup', { ...data, pushInfo })
   }
@@ -9,8 +9,8 @@ export default class EventsAPI extends Base {
     return this.apiClient.patch(`auth/confirm-email/${token}`)
   }
 
-  signin(data, pushInfo) {
-    return this.apiClient.post('auth/signin', { ...data, pushInfo })
+  login(data) {
+    return this.apiClient.post('login', { ...data })
   }
 
   recoverAccount(email) {

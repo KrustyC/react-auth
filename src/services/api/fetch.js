@@ -3,7 +3,7 @@ import isomorphicFetch from 'isomorphic-fetch'
 export default ( url, method, body ) => {
   const options = {
     method,
-    headers: requestHeaders( ),
+    headers: requestHeaders(),
     body: method !== 'GET' ? JSON.stringify(body) : null
   }
 
@@ -21,7 +21,7 @@ function parseStatus( status, res ) {
   })
 }
 
-function requestHeaders( ) {
+function requestHeaders() {
   return {
     Accept: 'application/json',
     'Content-Type': 'application/json',

@@ -1,11 +1,10 @@
 import _ from 'lodash'
 import queryString from 'query-string'
+import fetch from './fetch'
 
 // import { APP_PREFIX } from '../../config'
-// import { API_URL } from '../../config'
 
 const APP_PREFIX = 'react-auth'
-const API_URL = 'http://example.com'
 
 export default class ApiClient {
   constructor({ apiUrl = '' } = {}) {
@@ -55,19 +54,17 @@ export default class ApiClient {
     })
   }
 
-  async request ({ requestedPath, method, params = {}, body, config = {} }) {
+  async request ({ path, method, params = {}, body, config = {} }) {
     const addParam = _.keys(params).length > 0 ? '?' : ''
-    const url = `${this.apiUrl}/${requestedPath}${addParam}${queryString.stringify(params)}`
+    const url = `${this.apiUrl}/${path}${addParam}${queryString.stringify(params)}`
 
     // const token = typeof localStorage !== 'undefined' ?
     //   localStorage.getItem(`${APP_PREFIX}-token`)
     //   : null
 
-    // eventually add the token
     return fetch(url, method, body)
       .then(res => res)
       .catch((response) => {
-        console.log(response)
         Promise.reject(response)
       })
     // .then(
