@@ -7,11 +7,14 @@ module.exports = {
     "./src/app.js"
   ],
   output: {
+    publicPath: '/',
     path: path.resolve(__dirname, "dist"),
     filename: "js/[name].js"
   },
   devServer: {
-    contentBase: "./dist"
+    host: 'localhost',
+    port: 3000,
+    historyApiFallback: true
   },
   module: {
     rules: [

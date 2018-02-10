@@ -1,20 +1,15 @@
 import React from 'react'
-
 import { render } from 'react-dom'
-import { BrowserRouter as Router } from 'react-router-dom'
 import { Provider as ReduxProvider } from 'react-redux'
 
 import App from './views/App'
 import configureStore from './redux/store'
 
-const reduxStore = configureStore(window.REDUX_INITIAL_DATA)
+const reduxStore = configureStore()
 
-const RootHtml = ( ) => (
+render(
   <ReduxProvider store={reduxStore}>
-    <Router>
-      <App />
-    </Router>
-  </ReduxProvider>
+    <App />
+  </ReduxProvider>,
+  document.getElementById('app')
 )
-
-render(<RootHtml />, document.getElementById('app'))

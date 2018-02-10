@@ -1,33 +1,21 @@
-import _ from 'lodash'
 import React from 'react'
-import { connect } from 'react-redux'
-import { authOperations } from '../redux/ducks/auth'
+import { Router } from 'react-router-dom'
+import { createBrowserHistory } from 'history'
 
-class App extends React.Component {
-  componentWillMount() {
-    this.props.login({ data: 'prova' })
-  }
+import AppRoutes from './routes'
+import Navbar from './components/navbar'
+import Footer from './components/footer'
 
-  render() {
-    const { user } = this.props
-    console.log(user)
-    return (
-      <div className="row mt-5">
-        <div className="col-md-4 offset-md-1">
-          <h2>Welcome to the App</h2>
-          {!_.isNull(user) && <p> {user.firstName} {user.lastName} </p>}
-        </div>
-      </div>
-    )
-  }
-}
+const history = createBrowserHistory()
 
-const mapStateToProps = (state) => ({
-  user: state.auth.user
-})
+const App = () => (
+  <Router history={history}>
+    <div>
+      <Navbar />
+        <AppRoutes />
+      <Footer />
+    </div>
+  </Router>
+)
 
-const mapDispatchToProps = {
-  login: authOperations.login
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default App

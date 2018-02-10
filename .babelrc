@@ -1,4 +1,4 @@
 {
-  "presets": ["env", "react"],
+  "presets": ["env", "react", "react-hmre"],
   "plugins": ["transform-object-rest-spread", "transform-async-to-generator"]
 }
