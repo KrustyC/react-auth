@@ -11,14 +11,11 @@ class Login extends Component {
 
   render() {
     return (
-      <section className="section">
-        <div className="container">
-          <h1 className="title">Login Section</h1>
-          <h2 className="subtitle">
-            <LoginForm />
-          </h2>
-        </div>
-      </section>
+      <div>
+        <h2 className="subtitle">
+          <LoginForm />
+        </h2>
+      </div>
     )
   }
 }

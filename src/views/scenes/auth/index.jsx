@@ -2,8 +2,14 @@ import React from 'react'
 import AuthRoutes from './routes'
 
 const Auth = () => (
-  <section className="section is-large has-text-centered">
-    <AuthRoutes />
+  <section className="section is-large">
+    <div className="columns">
+      <div className="column is-4" />
+      <div className="column is-4">
+        <AuthRoutes />
+      </div>
+      <div className="column is-4" />
+    </div>
   </section>
 )
 

@@ -15,7 +15,7 @@ const LoginForm =() => (
       <p className="help is-danger">This email is invalid</p>
     </div>
     <div className="field">
-      <label className="label">Username</label>
+      <label className="label">Password</label>
       <div className="control has-icons-right">
         <input className="input is-success" type="password"/>
         <span className="icon is-small is-right">
