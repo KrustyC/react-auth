@@ -9,6 +9,10 @@ const APP_PREFIX = 'react-auth'
 export default class ApiClient {
   constructor({ apiUrl = '' } = {}) {
     this.apiUrl = apiUrl
+    this.headers = {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    }
   }
 
   get(requestPath, payload = {}, params = {}) {
@@ -61,35 +65,19 @@ export default class ApiClient {
     // const token = typeof localStorage !== 'undefined' ?
     //   localStorage.getItem(`${APP_PREFIX}-token`)
     //   : null
-
-    return fetch(url, method, body)
-      .then(res => res)
-      .catch((response) => {
-        Promise.reject(response)
+    const options = {
+      method,
+      headers: this.headers,
+      body: method !== 'GET' ? JSON.stringify(body) : null
+    }
+  
+    return fetch(url, options)
+      .then(response => {
+        const { status, statusText } = response
+        if (status >= 200 && status < 300) {
+          return Promise.resolve(response.json())
+        }
+        return Promise.reject(new Error(statusText))
       })
-    // .then(
-    //   res => this.handleResponse( res, action, next ),
-    //   err => this.handleErrors( err, action, next )
-    // );
-  }
-
-  handleErrors(err, action, next) {
-    next({
-      type: `${ action.type }_FAILED`,
-      payload: err,
-      meta: action.meta,
-    });
-
-    return Promise.reject(err)
-  }
-
-  handleResponse(res, action, next) {
-    next({
-      type: `${ action.type }_COMPLETED`,
-      payload: res,
-      meta: action.meta,
-    });
-
-    return res
   }
 }
