@@ -12,7 +12,11 @@ const App = () => (
   <Router history={history}>
     <div>
       <Navbar />
-        <AppRoutes />
+        <div className="hero is-fullheight">
+          <div className="hero-body">
+            <AppRoutes />
+          </div>
+        </div>
       <Footer />
     </div>
   </Router>

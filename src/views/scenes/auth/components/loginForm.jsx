@@ -3,28 +3,21 @@ import React from 'react'
 // @TODO ADD REDUX FORM!
 
 const LoginForm =() => (
-  <div>
+  <form>
     <div className="field">
-      <label className="label">Email</label>
-      <div className="control has-icons-right">
-        <input className="input is-danger" type="email" placeholder="Inser email" />
-        <span className="icon is-small is-right">
-          <i className="fas fa-exclamation-triangle"></i>
-        </span>
+      <div className="control">
+        <input className="input is-large" type="email" placeholder="Email" />
       </div>
-      <p className="help is-danger">This email is invalid</p>
     </div>
     <div className="field">
-      <label className="label">Password</label>
-      <div className="control has-icons-right">
-        <input className="input is-success" type="password"/>
-        <span className="icon is-small is-right">
-          <i className="fas fa-check" />
-        </span>
+      <div className="control">
+        <input className="input is-large" type="password" placeholder="Password" />
       </div>
-      <p className="help is-success">This username is available</p>
     </div>
-  </div>
+    <button className="button is-block is-info is-large is-fullwidth">
+      Login
+    </button>
+  </form>
 )
 
 export default LoginForm

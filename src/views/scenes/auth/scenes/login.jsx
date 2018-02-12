@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { authOperations } from '../../../../redux/ducks/auth'
 
 import LoginForm from '../components/loginForm'
+import FormContainer from '../components/formContainer'
 
 class Login extends Component {
   onLogin() {
@@ -11,11 +12,14 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
-        <h2 className="subtitle">
-          <LoginForm />
-        </h2>
-      </div>
+      <FormContainer
+        title="Login"
+        subtitle="Please enter your login information"
+        leftLink={{ text: 'Signup', path: '/auth/signup' }}
+        rightLink={{ text: 'Forgot Password', path: '/auth/forgot-password' }}
+      >
+        <LoginForm />
+      </FormContainer>
     )
   }
 }
