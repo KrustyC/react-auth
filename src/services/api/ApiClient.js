@@ -1,6 +1,6 @@
 import _ from 'lodash'
 import queryString from 'query-string'
-import fetch from './fetch'
+// import fetch from './fetch'
 
 // import { APP_PREFIX } from '../../config'
 
@@ -71,13 +71,12 @@ export default class ApiClient {
       body: method !== 'GET' ? JSON.stringify(body) : null
     }
   
-    return fetch(url, options)
-      .then(response => {
-        const { status, statusText } = response
-        if (status >= 200 && status < 300) {
-          return Promise.resolve(response.json())
-        }
-        return Promise.reject(new Error(statusText))
-      })
+    return fetch(url, options).then(res => res.json()).catch(({ response }) => {
+      if (response && response.status >= 400) {
+        return Promise.reject({ status: response.status, data: response.data })
+      }
+
+      return Promise.reject({ error: 'An error occurred. Please try again later!', status: 500 })
+    })
   }
 }

@@ -8,7 +8,7 @@ import FormContainer from '../components/formContainer'
 class Login extends Component {
   render() {
     const { user } = this.props
-    console.log(user)
+    
     return (
       <FormContainer
         title="Login"
@@ -16,7 +16,7 @@ class Login extends Component {
         leftLink={{ text: 'Create account', path: '/auth/signup' }}
         rightLink={{ text: 'Forgot Password', path: '/auth/forgot-password' }}
       >
-        <LoginForm onLogin={v => this.props.login(v)}/>
+        <LoginForm onLogin={v => this.props.login(v)} />
       </FormContainer>
     )
   }

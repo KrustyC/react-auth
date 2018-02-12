@@ -10,16 +10,22 @@ import { isValidEmail, isValidPassword } from '../../../../utils/validator'
 
 class LoginForm extends Component {
   static propTypes = {
+    error: PropTypes.string,
     handleSubmit: PropTypes.func.isRequired,
     submitting: PropTypes.bool.isRequired,
     valid: PropTypes.bool.isRequired
   }
 
+  static defaultProps = {
+    error: null
+  }
+
   render() {
-    const { submitting, valid, handleSubmit } = this.props
+    const { error, submitting, valid, handleSubmit, meta } = this.props
 
     return (
       <form onSubmit={handleSubmit(v => this.props.onLogin(v))}>
+        { !_.isNull(error) && <div className="notification is-danger">{error}</div> }
         <Field
           large
           name="email"
