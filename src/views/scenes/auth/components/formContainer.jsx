@@ -32,12 +32,13 @@ FormContainer.propTypes = {
     text: PropTypes.string.isRequired,
     path: PropTypes.string.isRequired
   }),
-  children: PropTypes.array.isRequired
+  children: PropTypes.any.isRequired
 }
 
 FormContainer.defaultProps = {
   leftLink: null,
   rightLink: null
 }
+
 
 export default FormContainer
