@@ -10,6 +10,8 @@ import Footer from './components/footer'
 const history = createBrowserHistory()
 const isAuthRoute = _.includes(history.location.pathname, '/auth/')
 
+console.log(isAuthRoute)
+
 const App = () => (
   <Router history={history}>
     <div>

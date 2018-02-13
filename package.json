@@ -6,7 +6,7 @@
   "author": "<davide.crestini94@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --open --hot",
+    "dev": "webpack-dev-server --hot",
     "build": "webpack"
   },
   "devDependencies": {
