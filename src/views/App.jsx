@@ -12,7 +12,9 @@ const App = () => (
   <Router history={history}>
     <div>
       <Navbar />
-        <AppRoutes />
+        <div className="container" style={{ minHeight: '800px' }}>
+          <AppRoutes />
+        </div>
       <Footer />
     </div>
   </Router>
