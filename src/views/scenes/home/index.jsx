@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Home =() => (
+const Home = () => (
   <section className="section is-large">
     <div>
       <h1 className="title">Hi!</h1>

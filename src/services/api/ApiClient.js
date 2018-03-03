@@ -1,6 +1,6 @@
 import _ from 'lodash'
 import queryString from 'query-string'
-import fetch from './fetch'
+// import fetch from './fetch'
 
 // import { APP_PREFIX } from '../../config'
 
@@ -9,6 +9,10 @@ const APP_PREFIX = 'react-auth'
 export default class ApiClient {
   constructor({ apiUrl = '' } = {}) {
     this.apiUrl = apiUrl
+    this.headers = {
+      Accept: 'application/json',
+      'Content-Type': 'application/json'
+    }
   }
 
   get(requestPath, payload = {}, params = {}) {
@@ -61,35 +65,18 @@ export default class ApiClient {
     // const token = typeof localStorage !== 'undefined' ?
     //   localStorage.getItem(`${APP_PREFIX}-token`)
     //   : null
+    const options = {
+      method,
+      headers: this.headers,
+      body: method !== 'GET' ? JSON.stringify(body) : null
+    }
+  
+    return fetch(url, options).then(res => res.json()).catch(({ response }) => {
+      if (response && response.status >= 400) {
+        return Promise.reject({ status: response.status, data: response.data })
+      }
 
-    return fetch(url, method, body)
-      .then(res => res)
-      .catch((response) => {
-        Promise.reject(response)
-      })
-    // .then(
-    //   res => this.handleResponse( res, action, next ),
-    //   err => this.handleErrors( err, action, next )
-    // );
-  }
-
-  handleErrors(err, action, next) {
-    next({
-      type: `${ action.type }_FAILED`,
-      payload: err,
-      meta: action.meta,
-    });
-
-    return Promise.reject(err)
-  }
-
-  handleResponse(res, action, next) {
-    next({
-      type: `${ action.type }_COMPLETED`,
-      payload: res,
-      meta: action.meta,
-    });
-
-    return res
+      return Promise.reject({ error: 'An error occurred. Please try again later!', status: 500 })
+    })
   }
 }
