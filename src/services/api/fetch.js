@@ -6,7 +6,7 @@ export default (url, method, body) => {
   }
 
   return fetch(url, options)
-    .then(response => {
+    .then((response) => {
       const { status, statusText } = response
       if (status >= 200 && status < 300) {
         return Promise.resolve(response.json())
@@ -17,5 +17,5 @@ export default (url, method, body) => {
 
 const requestHeaders = () => ({
   Accept: 'application/json',
-  'Content-Type': 'application/json',
+  'Content-Type': 'application/json'
 })

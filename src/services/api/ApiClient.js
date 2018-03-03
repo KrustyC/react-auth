@@ -58,7 +58,7 @@ export default class ApiClient {
     })
   }
 
-  async request ({ path, method, params = {}, body, config = {} }) {
+  async request({ path, method, params = {}, body, config = {} }) {
     const addParam = _.keys(params).length > 0 ? '?' : ''
     const url = `${this.apiUrl}/${path}${addParam}${queryString.stringify(params)}`
 
@@ -70,7 +70,7 @@ export default class ApiClient {
       headers: this.headers,
       body: method !== 'GET' ? JSON.stringify(body) : null
     }
-  
+
     return fetch(url, options).then(res => res.json()).catch(({ response }) => {
       if (response && response.status >= 400) {
         return Promise.reject({ status: response.status, data: response.data })

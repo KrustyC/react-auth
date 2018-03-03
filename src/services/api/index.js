@@ -8,7 +8,7 @@ export default function ({ apiUrl } = {}) {
     throw new Error('[apiUrl] required')
   }
 
-  const api = new ApiClient({ apiUrl: apiUrl })
+  const api = new ApiClient({ apiUrl })
 
   return {
     apiClient: api,
