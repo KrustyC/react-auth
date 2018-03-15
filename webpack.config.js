@@ -1,15 +1,15 @@
-const path = require("path");
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+const path = require('path')
+const HtmlWebPackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: [
     'regenerator-runtime/runtime',
-    "./src/app.js"
+    './src/app.js'
   ],
   output: {
     publicPath: '/',
-    path: path.resolve(__dirname, "dist"),
-    filename: "js/[name].js"
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'js/[name].js'
   },
   devServer: {
     host: 'localhost',
@@ -22,24 +22,27 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
+          loader: 'babel-loader'
         }
       },
       {
         test: /\.html$/,
         use: {
-          loader: "html-loader"
+          loader: 'html-loader'
         }
       }
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    alias: {
+      components: path.resolve(__dirname, 'src/views/components/')
+    },
+    extensions: ['.js', '.jsx']
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: "./src/index.html",
-      filename: "./index.html"
+      template: './src/index.html',
+      filename: './index.html'
     })
   ]
-};
+}

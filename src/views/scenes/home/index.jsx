@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from 'components/button'
 
 const Home = () => (
   <section className="section is-large">
@@ -10,6 +11,9 @@ const Home = () => (
         <p className="menu-label">
           Used libraries
         </p>
+        <Button primary>
+          Click me
+        </Button>
         <ul className="menu-list">
           <li>
             <ul>
@@ -22,7 +26,7 @@ const Home = () => (
           </li>
         </ul>
         <br />
-        <p>Run  <code>npm start</code> to start developing</p>
+        <p>Run <code>npm start</code> to start developing</p>
       </h2>
     </div>
   </section>
