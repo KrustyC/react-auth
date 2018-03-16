@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from 'components/button'
+import Button from 'Components/button'
 
 const Home = () => (
   <section className="section is-large">
@@ -11,7 +11,7 @@ const Home = () => (
         <p className="menu-label">
           Used libraries
         </p>
-        <Button variant="sucess">
+        <Button variant="default">
           Click me
         </Button>
         <ul className="menu-list">
