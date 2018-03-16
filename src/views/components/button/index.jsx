@@ -1,26 +1,36 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import theme from 'styled-theming'
 
-const PlainButton = ({ className, children, onClick }) => (
+const Button = ({ className, children, onClick }) => (
   <button className={`${className} button`} onClick={() => onClick()}>
     {children}
   </button>
 )
 
-PlainButton.propTypes = {
+Button.propTypes = {
   children: PropTypes.arrayOf(PropTypes.any).isRequired,
   className: PropTypes.string.isRequired,
+  variant: PropTypes.oneOf(['default', 'primary', 'success', 'warning']),
   onClick: PropTypes.func
 }
 
-PlainButton.defaultProps = {
-  onClick: () => {}
+Button.defaultProps = {
+  onClick: () => {},
+  variant: 'default'
 }
 
-const Button = styled(PlainButton)`
-  background: ${props => (props.primary ? 'palevioletred' : 'white')};
-  color: ${props => (props.primary ? 'white' : 'palevioletred')};
+const backgroundColor = theme.variants('mode', 'variant', {
+  default: { light: 'gray', dark: 'darkgray' },
+  primary: { light: 'blue', dark: 'darkblue' },
+  success: { light: 'green', dark: 'darkgreen' },
+  warning: { light: 'orange', dark: 'darkorange' }
+})
+
+const StyledButton = styled(Button)`
+  background: ${backgroundColor};
+  color: white;
   font-size: 1em;
   margin: 1em;
   padding: 0.25em 1em;
@@ -28,4 +38,4 @@ const Button = styled(PlainButton)`
   border-radius: 3px;
 `
 
-export default Button
+export default StyledButton

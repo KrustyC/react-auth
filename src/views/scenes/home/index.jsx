@@ -11,7 +11,7 @@ const Home = () => (
         <p className="menu-label">
           Used libraries
         </p>
-        <Button primary>
+        <Button variant="sucess">
           Click me
         </Button>
         <ul className="menu-list">
