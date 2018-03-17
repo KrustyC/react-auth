@@ -20,5 +20,12 @@ module.exports = {
     "react/jsx-curly-spacing": [2, "never"],
     "global-require": 0,
     "import/no-extraneous-dependencies": 0
-  }
+  },
+  "settings": {
+    "import/resolver": {
+      "babel-module-alias": {
+        
+      }
+    }
+  } 
 }

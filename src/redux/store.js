@@ -18,11 +18,12 @@ export default function configureStore(initialState) {
     routing: routerReducer
   })
 
+  console.log("qui si")
   return createStore(
     rootReducer,
     initialState,
     applyMiddleware(
-      promiseMiddleware,
+      // promiseMiddleware, @TODO FIX THIS
       thunkMiddleware,
       logger
     )

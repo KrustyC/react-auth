@@ -1,1 +1,3 @@
-export { default as promiseMiddleware } from './promise'
+import { promiseMiddleware } from './promise'
+
+export default promiseMiddleware

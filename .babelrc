@@ -4,6 +4,13 @@
     "transform-object-rest-spread",
     "transform-async-to-generator",
     "transform-class-properties",
-    "babel-plugin-styled-components"
+    "babel-plugin-styled-components",
+    ["module-resolver", {
+      "root": ["./src"],
+      "alias": {
+        "Components": "./src/views/components",
+        "Elements": "./src/views/components/elements"
+      }
+    }]
   ]
 }

@@ -4,7 +4,7 @@ import queryString from 'query-string'
 
 // import { APP_PREFIX } from '../../config'
 
-const APP_PREFIX = 'react-auth'
+// const APP_PREFIX = 'react-auth'
 
 export default class ApiClient {
   constructor({ apiUrl = '' } = {}) {

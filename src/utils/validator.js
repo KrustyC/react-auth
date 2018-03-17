@@ -5,8 +5,6 @@ export const isValidEmail = (email) => {
 }
 
 export const isValidPassword = (password) => {
-  // eslint-disable-next-line
   const re = /^(?=\S*[a-z])(?=\S*[A-Z])(?=\S*\d)(?=\S*([^\w\s]|[_]))\S{8,}$/i
-  // return re.test(password)
-  return true
+  return re.test(password)
 }

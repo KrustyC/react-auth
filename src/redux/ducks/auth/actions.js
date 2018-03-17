@@ -1,11 +1,11 @@
 import { SubmissionError } from 'redux-form'
 
 import { INITIALIZE, LOGOUT, SET_REDIRECT_AFTER_LOGIN } from './types'
-import { Action } from '../../../utils/remoteCall'
+// import { Action } from '../../../utils/remoteCall'
 import api from '../../../services/ApiSingleton'
 
 export const login = data => dispatch => api.auth.login(data).then((res) => {
-  console.log('LOGGATO', res)
+  // console.log('LOGGATO', res)
     // @TODO DISPATCH TO SET THE TOKEN
     // @TODO ROTUING WITH BROWSER HISTORY
 }).catch((err) => {

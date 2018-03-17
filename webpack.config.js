@@ -4,7 +4,7 @@ const HtmlWebPackPlugin = require('html-webpack-plugin')
 module.exports = {
   entry: [
     'regenerator-runtime/runtime',
-    './src/app.js'
+    './src/app.jsx'
   ],
   output: {
     publicPath: '/',
@@ -36,6 +36,7 @@ module.exports = {
   resolve: {
     alias: {
       Components: path.resolve(__dirname, 'src/views/components/'),
+      Elements: path.resolve(__dirname, 'src/views/components/elements'),
       Utils: path.resolve(__dirname, 'src/utils/')
     },
     extensions: ['.js', '.jsx']
