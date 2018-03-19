@@ -2,7 +2,8 @@ module.exports = {
   "extends": "airbnb",
   "parser": "babel-eslint",
   "env": {
-    "jest": true
+    "jest": true,
+    "browser": true
   },
   "ecmaFeatures": {
     "classes": true,
@@ -21,11 +22,11 @@ module.exports = {
     "global-require": 0,
     "import/no-extraneous-dependencies": 0
   },
-  "settings": {
-    "import/resolver": {
-      "babel-module-alias": {
+  // "settings": {
+  //   "import/resolver": {
+  //     "babel-module-alias": {
         
-      }
-    }
-  } 
+  //     }
+  //   }
+  // } 
 }

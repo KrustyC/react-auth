@@ -18,7 +18,7 @@ export default function configureStore(initialState) {
     routing: routerReducer
   })
 
-  console.log("qui si")
+  console.log('qui si')
   return createStore(
     rootReducer,
     initialState,

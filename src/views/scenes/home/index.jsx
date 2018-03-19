@@ -1,7 +1,9 @@
 import React from 'react'
-import { Title, Subtitle, Text } from 'Elements/text'
+import { Title, Subtitle, Text } from 'UiKit/text'
+import { Button, ButtonLink } from 'UiKit/buttons'
 
 const Home = () => (
+  console.log(Button),
   <section className="section is-large">
     <div>
       <Title lg>Hi</Title>
@@ -12,6 +14,16 @@ const Home = () => (
       <Text thin capitalize>
         Used libraries
       </Text>
+      <Button primary>
+        Click me
+      </Button>
+      <Button xl>
+        Click me
+      </Button>
+      <Button sm>
+        Click me
+      </Button>
+
       <ul className="menu-list">
         <li>
           <ul>

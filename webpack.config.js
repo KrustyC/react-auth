@@ -34,11 +34,12 @@ module.exports = {
     ]
   },
   resolve: {
-    alias: {
-      Components: path.resolve(__dirname, 'src/views/components/'),
-      Elements: path.resolve(__dirname, 'src/views/components/elements'),
-      Utils: path.resolve(__dirname, 'src/utils/')
-    },
+    // alias: {
+    //   // UiKit: path.resolve(__dirname, 'src/uikit'),
+    //   Components: path.resolve(__dirname, 'src/views/components'),
+    //   Elements: path.resolve(__dirname, 'src/views/components/elements'),
+    //   Utils: path.resolve(__dirname, 'src/utils/')
+    // },
     extensions: ['.js', '.jsx']
   },
   plugins: [

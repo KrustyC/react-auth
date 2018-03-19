@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components'
 
 import App from './views/App'
 import configureStore from './redux/store'
-import theme from './views/themes'
+import theme from './theme'
 
 const reduxStore = configureStore()
 
