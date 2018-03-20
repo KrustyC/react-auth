@@ -5,6 +5,7 @@ const theme = {
     success: '#00B233',
     warning: '#FFDA23',
     danger: '#B20000',
+    default: 'royalblue',
     text: {
       dark: 'black',
       light: '#fff'
@@ -17,11 +18,11 @@ const theme = {
     sm: '85%'
   },
   button: {
-    borderRadius: {
-      xl: '5px',
-      lg: '3px',
-      md: '2px',
-      sm: '1px'
+    margin: {
+      xl: '20px',
+      lg: '15px',
+      md: '10px',
+      sm: '5px'
     }
   }
 }

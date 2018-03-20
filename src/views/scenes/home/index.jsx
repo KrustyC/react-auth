@@ -11,17 +11,20 @@ const Home = () => (
         Hi this is my <strong>react boilerplate</strong>.
         It has been developed using:
       </Subtitle>
-      <Text thin capitalize>
-        Used libraries
+      <Text thin uppercase>
+        Upper case text
       </Text>
-      <Button primary>
-        Click me
+      <Button xl ml_xl>
+        Extra large
       </Button>
-      <Button xl>
-        Click me
+      <Button primary ml_xl>
+        Normal
       </Button>
-      <Button sm>
-        Click me
+      <Button sm ml_xl>
+        Small
+      </Button>
+      <Button disabled ml_sm>
+        Disabled
       </Button>
 
       <ul className="menu-list">

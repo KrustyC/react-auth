@@ -1,37 +1,49 @@
-import styled from 'styled-components'
-
-const getBackgroundBorderColor = (props) => {
-  if (props.primary) return props.theme.colors.primary
-  if (props.secondary) return props.theme.colors.secondary
-  if (props.success) return props.theme.colors.success
-  if (props.link) return props.theme.colors.link
-  if (props.warning) return props.theme.colors.warning
-  if (props.danger) return props.theme.colors.danger
-  return props.theme.colors.text
-}
+import styled, { css } from 'styled-components'
 
 export default styled.button`
-  background-color: ${props => getBackgroundBorderColor(props)};
-  color: ${(props) => {
-    if (props.primary || props.secondary || props.success || props.link) {
-      return props.theme.colors.text.light
-    }
-    return props.theme.colors.text.light
-  }};
-
   font-family: inherit;
   padding: 0.5em 1em;
-  border: 1px solid #999;
-  border: none rgba(0, 0, 0, 0);
   text-decoration: none;
-  border-radius: 2px;
+  border: 1px solid ${props => props.theme.colors.default};
+  border-radius: 5px;
+  background-color: ${props => props.theme.colors.default};
+  color: ${props => props.theme.colors.text.light};
 
-  margin-left: ${(props) => {
-    if (props.ml_xl) return props.theme.button.margin.xl
-    if (props.ml_lg) return props.theme.button.margin.lg
-    if (props.ml_sm) return props.theme.button.margin.sm
-    return '0px'
-  }};
+  ${props => props.primary && css`
+    background-color: props.theme.colors.primary;
+    color: props.theme.colors.text.light;
+  `}
+
+  ${props => props.secondary && css`
+    background-color: props.theme.colors.secondary;
+    color: props.theme.colors.text.light;
+  `}
+
+  ${props => props.success && css`
+    background-color: props.theme.colors.success;
+    color: props.theme.colors.text.light;
+  `}
+
+  ${props => props.warning && css`
+    background-color: props.theme.colors.warning;
+    color: props.theme.colors.text.light;
+  `}
+
+  ${props => props.danger && css`
+    background-color: props.theme.colors.danger;
+    color: props.theme.colors.text.light;
+  `}
+
+  ${props => props.disabled && css`
+    background-image: none;
+    /* csslint ignore:start */
+    filter: alpha(opacity=40);
+    /* csslint ignore:end */
+    opacity: 0.40;
+    cursor: not-allowed;
+    box-shadow: none;
+    pointer-events: none;
+  `}
 
   font-size: ${(props) => {
     if (props.xl) return props.theme.fontSize.xl
@@ -40,7 +52,19 @@ export default styled.button`
     return props.theme.fontSize.md
   }};
 
-  font-weight: 'normal';
+  margin-left: ${(props) => {
+    if (props.ml_xl) return props.theme.button.margin.xl
+    if (props.ml_lg) return props.theme.button.margin.lg
+    if (props.ml_sm) return props.theme.button.margin.sm
+    return '0px'
+  }};
+
+  margin-right: ${(props) => {
+    if (props.mr_xl) return props.theme.button.margin.xl
+    if (props.mr_lg) return props.theme.button.margin.lg
+    if (props.mr_sm) return props.theme.button.margin.sm
+    return '0px'
+  }};
 
   text-transform: ${(props) => {
     if (props.capitalize) return 'capitalize'
@@ -48,15 +72,7 @@ export default styled.button`
     return 'capitalize'
   }};
 
-  border: ${(props) => {
-    if (props.noBorder) return '0px'
-    return `1px solid ${getBackgroundBorderColor(props)}`
-  }};
-
-  border-radius: ${(props) => {
-    if (props.xl) return props.theme.button.borderRadius.xl
-    if (props.lg) return props.theme.button.borderRadius.lg
-    if (props.sm) return props.theme.button.borderRadius.sm
-    return props.theme.button.borderRadius.md
-  }};
+  &:hover {
+    background-image: linear-gradient(transparent, rgba(0,0,0, 0.1) 40%, rgba(0,0,0, 0.10));
+  }
 `
