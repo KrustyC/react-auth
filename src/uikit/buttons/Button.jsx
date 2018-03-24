@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-export default styled.button`
+const Button = styled.button`
   font-family: inherit;
   padding: 0.5em 1em;
   text-decoration: none;
@@ -76,3 +76,9 @@ export default styled.button`
     background-image: linear-gradient(transparent, rgba(0,0,0, 0.1) 40%, rgba(0,0,0, 0.10));
   }
 `
+
+const Icon = styled.i``
+
+Button.Icon = Icon
+
+export default Button

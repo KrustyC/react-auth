@@ -1,6 +1,7 @@
 import React from 'react'
 import { Title, Subtitle, Text } from 'UiKit/text'
 import { Button, ButtonLink } from 'UiKit/buttons'
+import { popularRepositoryQuery } from '../../../services/ApiSingleton2'
 
 const Home = () => (
   console.log(Button),

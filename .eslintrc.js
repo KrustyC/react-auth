@@ -22,6 +22,9 @@ module.exports = {
     "global-require": 0,
     "import/no-extraneous-dependencies": 0
   },
+  'import/ignore': [
+    'node_modules'
+  ]
   // "settings": {
   //   "import/resolver": {
   //     "babel-module-alias": {

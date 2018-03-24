@@ -4,14 +4,18 @@ import { BrowserRouter, Link, Route, Switch } from 'react-router-dom'
 import DefaultLayout from '../layouts/defaultLayout'
 
 import Home from '../scenes/home'
+import Dashboard from '../scenes/dashboard'
+import UiKit from '../scenes/uikit'
 import Auth from '../scenes/auth'
 import NotFound from '../scenes/not-found'
 
-const AppRoutes =() => (
+const AppRoutes = () => (
   <Switch>
-    <DefaultLayout exact path="/" component={Home}/>
-    <Route path="/auth" component={Auth}/>
-    <Route path="*" component={NotFound}/>
+    <DefaultLayout exact path="/" component={Home} />
+    <DefaultLayout path="/dashboard" component={Dashboard} />
+    <Route path="/auth" component={Auth} />
+    <Route path="/uikit" component={UiKit} />
+    <Route path="*" component={NotFound} />
   </Switch>
 )
 
