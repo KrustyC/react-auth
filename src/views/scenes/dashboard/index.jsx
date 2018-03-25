@@ -2,7 +2,6 @@ import _ from 'lodash'
 import React from 'react'
 import { graphql } from 'react-apollo'
 import { Block } from 'styled-loaders-react'
-import { Title, Subtitle, Text } from 'UiKit/text'
 import { popularRepositoryQuery } from '../../../services/ApiSingleton2'
 
 const RepostioryList = ({ data: { loading, error, search } }) => {

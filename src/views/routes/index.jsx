@@ -5,8 +5,8 @@ import DefaultLayout from '../layouts/defaultLayout'
 
 import Home from '../scenes/home'
 import Dashboard from '../scenes/dashboard'
-import UiKit from '../scenes/uikit'
 import Auth from '../scenes/auth'
+import UiKit from '../scenes/uikit'
 import NotFound from '../scenes/not-found'
 
 const AppRoutes = () => (
