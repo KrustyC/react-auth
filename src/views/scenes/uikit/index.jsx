@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { Button, Title } from 'UiKit/elements'
 import { Navbar } from 'UiKit/blocks'
+import { Loader } from 'UiKit/elements'
 
 const UiKit = () => (
   <Fragment>
@@ -17,6 +18,11 @@ const UiKit = () => (
     <Button modifiers={['success']}>
       Success Button
     </Button>
+    <Loader modifiers={['xlarge']} />
+    <Loader modifiers={['large']} />
+    <Loader />
+    <Loader modifiers={['small']} />
+    <Loader modifiers={['xsmall']} />
   </Fragment>
 )
 

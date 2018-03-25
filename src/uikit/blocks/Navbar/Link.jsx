@@ -9,7 +9,6 @@ const NavbarLink = ListItem.extend`
     color: ${navbar.item.color};
     border-bottom: ${navbar.item.border.width}px solid ${navbar.item.border.color};
 
-    &.-active,
     &:hover,
     &:focus {
       color: ${navbar.item.active.color};

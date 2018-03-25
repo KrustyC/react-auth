@@ -10,8 +10,8 @@ const Brand = styled.div`
     font-size: ${navbar.item.fontSize};
     height: ${navbar.height}px;
     line-height: ${navbar.height}px;
-    padding-left: ${(navbar.height - 20) / 2}px;
-    padding-right: ${(navbar.height - 20) / 2}px;
+    padding-left: ${Math.round((navbar.height - 20) / 2)}px;
+    padding-right: ${Math.round((navbar.height - 20) / 2)}px;
   `}
 `
 

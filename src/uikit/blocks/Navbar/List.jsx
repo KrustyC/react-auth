@@ -5,6 +5,7 @@ const List = styled.nav`
   flex-flow: row nowrap;
   align-items: center;
   white-space: nowrap;
+  margin-left: ${props => (props.right ? 'auto' : 'none')};
 
   ${({ theme: { navbar } }) => css`
     @media (min-width: ${navbar.collapseBreakPoint}px) {

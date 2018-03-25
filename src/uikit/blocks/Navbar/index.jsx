@@ -14,7 +14,7 @@ const NavbarComponent = styled.div`
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
 `
 const NavbarArea = styled.div`
-  justify-content: space-between;
+  /*justify-content: space-between;*/
   display: flex;
   flex-flow: row wrap;
   margin-left: auto;

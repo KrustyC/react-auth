@@ -1,12 +1,12 @@
 import _ from 'lodash'
 import React from 'react'
 import { graphql } from 'react-apollo'
-import { Block } from 'styled-loaders-react'
+import { Loader } from 'UiKit/elements'
 import { popularRepositoryQuery } from '../../../services/ApiSingleton2'
 
 const RepostioryList = ({ data: { loading, error, search } }) => {
   if (loading) {
-    return <Block size="20px" duration="1s" />
+    return <Loader size="20px" duration="1s" />
   }
 
   if (error) {
