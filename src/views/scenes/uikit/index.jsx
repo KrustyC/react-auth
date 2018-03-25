@@ -9,14 +9,8 @@ const UiKit = () => (
         BRAND
       </Navbar.Brand>
       <Navbar.List>
-        <Navbar.ListItem>
-          <Navbar.Link>
-            Item 1
-          </Navbar.Link>
-          <Navbar.Link>
-            Item 2
-          </Navbar.Link>
-        </Navbar.ListItem>
+        <Navbar.Link to="/">Item 1</Navbar.Link>
+        <Navbar.Link to="/">Item 2</Navbar.Link>
       </Navbar.List>
     </Navbar>
     <Title>Title</Title>

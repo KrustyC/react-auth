@@ -5,7 +5,7 @@ const Brand = styled.a`
   font-size: 16px;
   color: #777;
   ${({ theme }) => css`
-    margin: round((${theme.navbar.height} - 20) / 2);
+    margin: ${(theme.navbar.height - 20) / 2}px;
   `}
 `
 

@@ -1,18 +1,21 @@
-import styled, { css } from 'styled-components'
+import { css } from 'styled-components'
+import { Link } from 'react-router-dom'
+import ListItem from './ListItem'
 
-const Link = styled.div`
+
+const NavbarLink = ListItem.extend`
   ${({ theme: { navbar } }) => css`
-    line-height: ${navbar.height} + ${navbar.item.border.width};
+    line-height: ${navbar.height + navbar.item.border.width}px;
     color: ${navbar.item.color};
-    border-bottom: ${navbar.item.border.width} solid ${navbar.item.border.color};
-    
+    border-bottom: ${navbar.item.border.width}px solid ${navbar.item.border.color};
+
     &.-active,
     &:hover,
     &:focus {
-        color: ${navbar.item.active.color};
-        border-bottom-color: ${navbar.item.active.borderColor};
+      color: ${navbar.item.active.color};
+      border-bottom-color: ${navbar.item.active.borderColor};
     }
   `}
 `
 
-export default Link
+export default NavbarLink.withComponent(Link)

@@ -26,7 +26,7 @@ const theme = {
     }
   },
   navbar: {
-    height: '64px',
+    height: 64,
     colors: {
       foreground: '#000',
       background: '#fff'
@@ -34,7 +34,7 @@ const theme = {
     border: {
       color: '#ddd'
     },
-    collapseBreakPoint: '768px',
+    collapseBreakPoint: 768,
     item: {
       fontSize: '14px',
       color: '#555',
@@ -44,7 +44,7 @@ const theme = {
         borderColor: '#673ab7'
       },
       border: {
-        width: '4px',
+        width: 4,
         color: 'transparent'
       }
     }

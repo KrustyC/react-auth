@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react'
-import styled from 'styled-components'
+import React from 'react'
+import styled, { css } from 'styled-components'
 
 import Brand from './Brand'
 import Icon from './Icon'
@@ -8,17 +8,19 @@ import List from './List'
 import ListItem from './ListItem'
 
 const NavbarComponent = styled.div`
-  background-color: 'black';
+  ${({ theme }) => css`
+    background-color: ${theme.navbar.colors.background};
+  `}
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
 `
-const Area = styled.div`
+const NavbarArea = styled.div`
   justify-content: space-between;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
   display: flex;
   flex-flow: row wrap;
-  align-items: stretch;
   margin-left: auto;
   margin-right: auto;
+  align-items: center;
+  
 
   @media (min-width: 768px) { width: 750px; }
   @media (min-width: 992px) { width: 970px; }
@@ -26,13 +28,11 @@ const Area = styled.div`
 `
 
 const Navbar = props => (
-  <Fragment>
-    <NavbarComponent>
-      <Area>
-        {props.children}
-      </Area>
-    </NavbarComponent>
-  </Fragment>
+  <NavbarComponent>
+    <NavbarArea>
+      {props.children}
+    </NavbarArea>
+  </NavbarComponent>
 )
 
 Navbar.Brand = Brand

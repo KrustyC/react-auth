@@ -8,10 +8,10 @@ const Brand = styled.div`
   ${({ theme: { navbar } }) => css`
     color: ${navbar.color};
     font-size: ${navbar.item.fontSize};
-    height: ${navbar.height};
-    line-height: ${navbar.height};
-    padding-left: round((${navbar.height} - 20) / 2);
-    padding-right: round((${navbar.height} - 20) / 2);
+    height: ${navbar.height}px;
+    line-height: ${navbar.height}px;
+    padding-left: ${(navbar.height - 20) / 2}px;
+    padding-right: ${(navbar.height - 20) / 2}px;
   `}
 `
 

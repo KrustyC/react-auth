@@ -1,19 +1,19 @@
 import styled, { css } from 'styled-components'
 
-const List = styled.div`
+const List = styled.nav`
   display: none;
   flex-flow: row nowrap;
   align-items: center;
   white-space: nowrap;
 
   ${({ theme: { navbar } }) => css`
-    @media (min-width: ${navbar.collapseBreakPoint}) {
+    @media (min-width: ${navbar.collapseBreakPoint}px) {
       display: flex;
     }
 
-    @media (max-width: ${navbar.collapseBreakPoint}) {
+    @media (max-width: ${navbar.collapseBreakPoint}px) {
       position: fixed;
-      top: ${navbar.height};
+      top: ${navbar.height}px;
       left: 0;
       width: 100%;
       overflow-y: hidden;
@@ -22,7 +22,6 @@ const List = styled.div`
       background-color: ${navbar.colors.background};
     }
   `}
-  
 `
 
 export default List
