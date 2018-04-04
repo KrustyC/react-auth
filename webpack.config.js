@@ -36,7 +36,7 @@ module.exports = {
   },
   resolve: {
     // alias: {
-    //   // UiKit: path.resolve(__dirname, 'src/uikit'),
+    //   UiKit: path.resolve(__dirname, 'src/uikit'),
     //   Components: path.resolve(__dirname, 'src/views/components'),
     //   Elements: path.resolve(__dirname, 'src/views/components/elements'),
     //   Utils: path.resolve(__dirname, 'src/utils/')

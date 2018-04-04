@@ -14,7 +14,7 @@ const Home = () => (
         </li>
       </ul>
       <br />
-      <p>Run <code>npm start</code> to start developing</p>
+      <p>Run <code>npm start</code> to start doing cool stuff</p>
     </div>
   </section>
 )

@@ -25,11 +25,4 @@ module.exports = {
   'import/ignore': [
     'node_modules'
   ]
-  // "settings": {
-  //   "import/resolver": {
-  //     "babel-module-alias": {
-        
-  //     }
-  //   }
-  // } 
 }
