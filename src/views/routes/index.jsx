@@ -1,12 +1,12 @@
 import React from 'react'
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom'
 
+import UiKit from 'uikit/docs'
 import DefaultLayout from '../layouts/defaultLayout'
 
 import Home from '../scenes/home'
 import Dashboard from '../scenes/dashboard'
 import Auth from '../scenes/auth'
-import UiKit from '../scenes/uikit'
 import NotFound from '../scenes/not-found'
 
 const AppRoutes = () => (

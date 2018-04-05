@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Route } from 'react-router-dom'
 
+import PaddedLayout from './PaddedLayout'
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
 
@@ -8,13 +9,13 @@ const DefaultLayout = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
     render={matchProps => (
-      <div className="default-layou">
+      <Fragment>
         <Navbar />
-        <div className="container">
+        <PaddedLayout>
           <Component {...matchProps} />
-        </div>
+        </PaddedLayout>
         <Footer />
-      </div>
+      </Fragment>
     )}
   />
 )

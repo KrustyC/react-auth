@@ -1,18 +1,18 @@
 module.exports = {
-  "extends": "airbnb",
-  "parser": "babel-eslint",
-  "env": {
-    "jest": true,
-    "browser": true
+  extends: "airbnb",
+  parser: "babel-eslint",
+  env: {
+    jest: true,
+    browser: true
   },
-  "ecmaFeatures": {
-    "classes": true,
+  ecmaFeatures: {
+    classes: true,
   },
-  "plugins": [
+  plugins: [
     "import",
     "jsx-a11y"
   ],
-  "rules": {
+  rules: {
     "comma-dangle": ["error", "never"],
     "semi": [ "error", "never" ],
     "no-underscore-dangle": "off",
@@ -22,7 +22,11 @@ module.exports = {
     "global-require": 0,
     "import/no-extraneous-dependencies": 0
   },
-  'import/ignore': [
-    'node_modules'
-  ]
+  settings: {
+    "import/resolver": {
+      webpack: {
+        config: 'webpack.config.js'
+      }
+    }
+  }
 }
