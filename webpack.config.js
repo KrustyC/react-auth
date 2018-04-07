@@ -17,6 +17,8 @@ module.exports = {
     port: 3000,
     historyApiFallback: true
   },
+  devtool: 'source-map', // Make a development only file for this and the one below
+  mode: 'development',
   module: {
     rules: [
       {
@@ -31,6 +33,19 @@ module.exports = {
         use: {
           loader: 'html-loader'
         }
+      },
+      {
+        test: /\.(css|scss|less)$/,
+        use: [{
+          loader: 'style-loader'
+        }, {
+          loader: 'css-loader'
+        }, {
+          loader: 'sass-loader'
+        }, {
+          loader: 'less-loader',
+          options: { javascriptEnabled: true } 
+        }]
       }
     ]
   },

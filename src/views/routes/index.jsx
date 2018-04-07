@@ -1,8 +1,8 @@
 import React from 'react'
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 
 import UiKit from 'uikit/docs'
-import DefaultLayout from '../layouts/defaultLayout'
+import DefaultLayout from '../layouts/DefaultLayout'
 
 import Home from '../scenes/home'
 import Dashboard from '../scenes/dashboard'

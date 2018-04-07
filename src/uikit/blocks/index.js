@@ -1,9 +1,10 @@
-import Card from './Card'
-import Main from './Main'
+import { Column, Row } from './Grid'
+import Layout from './Layout'
 import Navbar from './Navbar'
 
 export {
-  Card,
-  Main,
-  Navbar
+  Column,
+  Layout,
+  Navbar,
+  Row
 }

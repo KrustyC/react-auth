@@ -1,4 +1,19 @@
-const theme = {
+import { injectGlobal } from 'styled-components'
+
+// eslint-disable-next-line
+injectGlobal`
+  html {
+    height: 100%;
+    width: 100%;
+  }
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+`
+
+export default {
   colors: {
     primary: 'royalblue',
     secondary: 'teal',
@@ -26,5 +41,3 @@ const theme = {
     }
   }
 }
-
-export default theme

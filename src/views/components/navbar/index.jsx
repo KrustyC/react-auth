@@ -1,9 +1,7 @@
 import _ from 'lodash'
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Header, HeaderRegion, HeaderTitle, Tabs } from 'reactackle'
-
-import Link from './Link'
+import { Navbar } from 'uikit'
 
 const leftLinks = [{
   text: 'Home',
@@ -21,7 +19,7 @@ const rightLinks = [{
   to: '/auth/signup'
 }]
 
-export default class Navbar extends Component {
+export default class DefaultNavbar extends Component {
   state = {
     selected: 0
   }
@@ -32,37 +30,11 @@ export default class Navbar extends Component {
 
   render() {
     return (
-      <Header behavior="fixed">
-        <HeaderRegion verticalAlign="center">
-          <HeaderTitle>
-            React Auth Boilerplate
-          </HeaderTitle>
-        </HeaderRegion>
-        <HeaderRegion
-          spread
-          size="blank"
-          verticalAlign="stretch"
-        >
-          <Tabs
-            tabs={_.map(leftLinks, ({ text, to }) => ({ text, linkHref: to }))}
-            selected={this.state.selected}
-            onChange={this.onSelectItem}
-            linkComponent={Link}
-          />
-        </HeaderRegion>
-        <HeaderRegion
-          spread
-          size="blank"
-          verticalAlign="stretch"
-        >
-          <Tabs
-            tabs={_.map(rightLinks, ({ text, to }) => ({ text, linkHref: to }))}
-            selected={this.state.selected}
-            onChange={this.onSelectItem}
-            linkComponent={Link}
-          />
-        </HeaderRegion>
-      </Header>
+      <Navbar>
+        <Navbar.Brand>
+          Ciao
+        </Navbar.Brand>
+      </Navbar>
     )
   }
 }
