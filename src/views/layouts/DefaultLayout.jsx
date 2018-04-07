@@ -3,7 +3,8 @@ import PropTypes from 'prop-types'
 import { Route } from 'react-router-dom'
 
 import CenteredLayout from './CenteredLayout'
-import Navbar from '../components/navbar'
+// import AuthenticatedNavbar from '../components/navbars/authenticated'
+import UnauthenticatedNavbar from '../components/navbars/unauthenticated'
 import Footer from '../components/footer'
 
 const DefaultLayout = ({ component: CustomComponent, ...rest }) => (
@@ -11,7 +12,7 @@ const DefaultLayout = ({ component: CustomComponent, ...rest }) => (
     {...rest}
     render={matchProps => (
       <Fragment>
-        <Navbar />
+        <UnauthenticatedNavbar /> {/* Check if user is authenticated */}
         <CenteredLayout>
           <CustomComponent {...matchProps} />
         </CenteredLayout>

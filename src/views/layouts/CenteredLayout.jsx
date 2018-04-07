@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import { Row, Column } from 'uikit'
 
-const PaddedLayout = ({ children }) => (
+const CenteredLayout = ({ children }) => (
   <Row>
     <Column span={6} />
     <Column span={12}>{children}</Column>
@@ -11,9 +11,12 @@ const PaddedLayout = ({ children }) => (
   </Row>
 )
 
-PaddedLayout.propTypes = {
-  children: PropTypes.any.isRequired
+CenteredLayout.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.object,
+    PropTypes.instanceOf(Component)
+  ]).isRequired
 }
 
-
-export default PaddedLayout
+export default CenteredLayout

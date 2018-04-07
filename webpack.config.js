@@ -44,7 +44,7 @@ module.exports = {
           loader: 'sass-loader'
         }, {
           loader: 'less-loader',
-          options: { javascriptEnabled: true } 
+          options: { javascriptEnabled: true }
         }]
       }
     ]

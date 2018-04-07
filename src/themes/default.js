@@ -1,4 +1,5 @@
 import { injectGlobal } from 'styled-components'
+import colors from './colors'
 
 // eslint-disable-next-line
 injectGlobal`
@@ -14,18 +15,7 @@ injectGlobal`
 `
 
 export default {
-  colors: {
-    primary: 'royalblue',
-    secondary: 'teal',
-    success: '#00B233',
-    warning: '#FFDA23',
-    danger: '#B20000',
-    default: 'royalblue',
-    text: {
-      dark: 'black',
-      light: '#fff'
-    }
-  },
+  colors,
   fontSize: {
     xl: '125%',
     lg: '110%',
@@ -39,5 +29,10 @@ export default {
       md: '10px',
       sm: '5px'
     }
+  },
+  navbar: {
+    background: colors.dark,
+    color: colors.white,
+    height: '64px'
   }
 }
