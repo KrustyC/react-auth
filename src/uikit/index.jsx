@@ -11,6 +11,7 @@ import {
   Link,
   Loader,
   P,
+  Section,
   Subtitle,
   Title
 } from './elements'
@@ -25,6 +26,7 @@ export {
   Navbar,
   P,
   Row,
+  Section,
   Subtitle,
   Title
 }
